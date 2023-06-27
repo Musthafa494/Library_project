@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+ {% csrf_token %}
+
+  <h1>Mathematical Operations</h1>
+<h2>The sum is {{sum}}</h2><br>
+<h2>The Diffrence is {{diffrence}}</h2><br>
+<h2>The Product is {{product}}</h2><br>
+<h2>The Quotient is {{quotient}}</h2><br>
+{% endblock %}

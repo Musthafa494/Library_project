@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+{% block title %} Search{% endblock %}
+<center>
+  <h1>Search Page</h1>
+</center>
+<!--  <h1>Books Details</h1>-->
+  <table class="table table-bordered">
+
+
+    {% for i in m %}
+       <tr>
+      <th>BookDetails</th>
+    </tr>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Price</th>
+      <th>Document</th>
+      <th>Cover Image</th>
+
+    </tr>
+   <tr>
+       <td><img src="{{i.cover.url}}" height="100px" width="100px"></td>
+      <td>{{i.title}}</td>
+      <td>{{i.author}}</td>
+      <td>{{i.price}}</td>
+      <td><a href=" {{i.pdf.url}}">Document</a></td>
+
+    </tr>
+
+
+{% endfor %}
+  </table>
+</center>
+{% endblock %}

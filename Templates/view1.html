@@ -1,0 +1,51 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<center>
+<!--  <h1>Books Details</h1>-->
+  <table class="table table-bordered">
+<!--    <tr>-->
+<!--      <th>TITLE</th>-->
+<!--      <th>AUTHOR</th>-->
+<!--      <th>PRICE</th>-->
+
+<!--    </tr>-->
+<!--    {% for i in book %}-->
+<!--    <tr>-->
+<!--      <td>{{i.title}}</td>-->
+<!--      <td>{{i.author}}</td>-->
+<!--      <td>{{i.price}}</td>-->
+<!--    </tr>-->
+<!--    {% endfor %}-->
+
+    {% for i in book %}
+       <tr>
+      <th>BookDetails</th>
+    </tr>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Price</th>
+      <th>Document</th>
+      <th>Cover Image</th>
+      <th>View</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+   <tr>
+       <td><img src="{{i.cover.url}}" height="100px" width="100px"></td>
+      <td>{{i.title}}</td>
+      <td>{{i.author}}</td>
+      <td>{{i.price}}</td>
+      <td><a href=" {{i.pdf.url}}">Document</a></td>
+       <td><a href="{% url 'book:viewbook' i.id %}" class="btn btn-primary btn-lg">Views</a></td>
+       <td><a href="{% url 'book:updatebook' i.id %}" class="btn btn-primary btn-lg">Edit</a></td>
+       <td><a href="{% url 'book:deletebook' i.id %}" class="btn btn-primary btn-lg">Delete</a></td>
+
+    </tr>
+
+
+{% endfor %}
+  </table>
+</center>
+{% endblock %}

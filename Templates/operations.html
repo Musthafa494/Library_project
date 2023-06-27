@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+  <h1>Mathematical Operations</h1>
+  <form method="post">
+      {% csrf_token %}
+  <div class="mb-3">
+  <label  class="form-label">Number 1</label>
+  <input type="text" class="form-control" name="fn" placeholder="Enter the First number">
+</div>
+ <div class="mb-3">
+  <label  class="form-label">Number 2</label>
+  <input type="text" class="form-control" name="sn" placeholder="Enter the Second number">
+</div>
+
+</div>
+    <div class="mb-3">
+  <input type="submit" onclick="results.html">
+</div>
+
+
+    </form>
+
+{% endblock %}
